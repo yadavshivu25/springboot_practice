@@ -1,0 +1,121 @@
+POST http://localhost:8080/resources/news
+Content-Type: application/json
+
+{
+  "title": "Hello Mars!",
+  "text": "Am Planeten Mars wurde Leben entdeckt.",
+  "publicationDate": "2024-01-03",
+  "topNews": true,
+  "category": {
+    "id": 1,
+    "name": "Allgemein"
+  },
+  "authors": [
+    {
+      "sex": "MALE",
+      "firstName": "Maxi",
+      "lastName": "Musterkind"
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8080/resources/news/1
+
+###
+
+GET http://localhost:8080/resources/news/1
+Accept: application/yaml
+
+###
+
+GET http://localhost:8080/resources/news/10
+Accept: text/csv
+
+###
+
+PUT http://localhost:8080/resources/news/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Hello Great World!",
+  "text": "Herzlich willkommen am Planeten Erde.",
+  "publicationDate": "2024-01-01",
+  "topNews": false,
+  "category": {
+    "id": 1,
+    "name": "Allgemein"
+  },
+  "authors": [
+    {
+      "id": 1,
+      "sex": "MALE",
+      "firstName": "Markus",
+      "lastName": "Mustermann"
+    },
+    {
+      "id": 2,
+      "sex": "FEMALE",
+      "firstName": "Martina",
+      "lastName": "Musterfrau"
+    }
+  ]
+}
+
+###
+
+DELETE http://localhost:8080/resources/news/1
+
+###
+
+GET http://localhost:8080/resources/news
+
+###
+
+GET http://localhost:8080/resources/news?authorid=1
+
+###
+
+GET http://localhost:8080/resources/news?categoryid=1
+
+###
+
+GET http://localhost:8080/resources/news?searchterm=world
+
+###
+
+GET http://localhost:8080/resources/news?authorid=1&categoryid=1&searchterm=world
+
+###
+
+GET http://localhost:8080/resources/news/dto
+
+###
+
+GET http://localhost:8080/webservices/NewsWebService?wsdl
+
+###
+
+GET http://localhost:8080/docs/api
+
+###
+
+GET http://localhost:8180/management/health
+
+###
+
+GET http://localhost:8180/management/info
+
+###
+
+GET http://localhost:8180/management/metrics
+
+###
+
+GET http://localhost:8180/management/metrics/newsResource
+
+###
+
+GET http://localhost:8180/management/prometheus

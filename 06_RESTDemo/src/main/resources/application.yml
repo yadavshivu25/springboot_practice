@@ -1,0 +1,17 @@
+spring:
+  datasource:
+#   name: db_name
+    url: jdbc:derby:memory:db_news;create=true
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_empty
+
+  cxf:
+    path: /webservices
